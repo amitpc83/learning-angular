@@ -1,0 +1,21 @@
+<h1 style="align-content: center">Todo List</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (todo of todos$ | async; track $index) {
+      <tr>
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.userId }}</td>
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.completed ? 'Yes' : 'No' }}</td>
+      </tr>
+    }
+  </tbody>
+</table>
